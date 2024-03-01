@@ -129,18 +129,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7248315718989308221}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &255358976 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4930600158296485586, guid: 7f49bac643549af46832f45f08ba6c3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7248315718989308221}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59cb4b79c572994a982ad13497b7295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &312943063
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _subGameInvokerList:
-  - {fileID: 255358976}
+  - {fileID: 7248315718989308223}
   _subGamesManagementSystem: {fileID: 1802545621}
   _transparentBackground: {fileID: 519042746}
 --- !u!1 &1802545619
@@ -798,6 +786,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802545620}
+  - component: {fileID: 1802545622}
+  - component: {fileID: 1802545623}
   - component: {fileID: 1802545621}
   m_Layer: 5
   m_Name: SubGameContainer
@@ -834,11 +824,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802545619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe6a39ecd854f70b9e456e68bb9c087, type: 3}
+  m_Script: {fileID: 11500000, guid: dfe746d89d104810842a335a847f8869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _subGames:
+  _subGameList:
   - {fileID: 2941043488121590446, guid: d2ce2387aa462c84b9d32667d13dccb4, type: 3}
+--- !u!223 &1802545622
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802545619}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
+--- !u!114 &1802545623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802545619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1836609770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,11 +1193,37 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4930600158296485586, guid: 7f49bac643549af46832f45f08ba6c3a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3110917721180838382, guid: 7f49bac643549af46832f45f08ba6c3a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7248315718989308223}
   m_SourcePrefab: {fileID: 100100000, guid: 7f49bac643549af46832f45f08ba6c3a, type: 3}
+--- !u!1 &7248315718989308222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3110917721180838382, guid: 7f49bac643549af46832f45f08ba6c3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7248315718989308221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7248315718989308223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7248315718989308222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0d6acfbcce4a1bb196a1a4ede043ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scalingForce: {x: 0.2, y: 0.2, z: 0.2}
+  _scalingDuration: 0.3
+  _subGameIndex: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

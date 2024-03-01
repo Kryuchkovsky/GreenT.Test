@@ -1,4 +1,4 @@
-﻿namespace SubGames.Mining.Logic
+﻿namespace Logic.SubGames.Mining
 {
     public enum MineralType
     {

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using SubGames;
+using Logic.SubGames;
 using UnityEngine;
 
 namespace Logic.Core
@@ -43,7 +43,6 @@ namespace Logic.Core
         private void UnloadSubGame()
         {
             _subGamesManagementSystem.Unload();
-            _transparentBackground.ChangeVisibility(false);
         }
         
         private void OnSubGameUnloaded()

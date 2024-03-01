@@ -88,6 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6576d982d696496a90ceb6f09d1ef193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Reward>k__BackingField: 0
   <Durability>k__BackingField: 2
-  <MiningAnimationDuration>k__BackingField: 1
+  <MiningAnimationDuration>k__BackingField: 0.5

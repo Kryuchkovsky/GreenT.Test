@@ -2,17 +2,20 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace SubGames.Mining.Logic
+namespace Logic.SubGames.Mining
 {
     public abstract class Mineral : MonoBehaviour
     {
         public event Action<Mineral> Mined;
+
+        protected int _currentDurability;
+        
+        [SerializeField] private int _miningStrength = 50;
+        [SerializeField, Range(0, 3)] public float _miningAnimationDuration = 0.5f;
         
         private Sequence _miningAnimationSequence;
-        private int _currentDurability;
 
-        [field: SerializeField, Min(0)] public int Reward { get; private set; }
-        [field: SerializeField, Range(0, 10)] public int Durability { get; private set; } = 1;
+        [field: SerializeField, Range(1, 10)] public int Durability { get; private set; } = 1;
         
         public abstract MineralType Type { get; }
 
@@ -20,9 +23,10 @@ namespace SubGames.Mining.Logic
         {
             _currentDurability = Durability;
         }
-        
-        public abstract Sequence GetMiningAnimation();
+
         public abstract void SetSelectionEffectStatus(bool status);
+
+        public virtual Sequence GetMiningAnimation() => DOTween.Sequence().Append(transform.DOShakePosition(_miningAnimationDuration, _miningStrength));
 
         public void Extract()
         {
@@ -50,7 +54,7 @@ namespace SubGames.Mining.Logic
             _miningAnimationSequence?.Restart();
         }
 
-        protected void OnMined()
+        private void OnMined()
         {
             if (_currentDurability > 0) return;
 
